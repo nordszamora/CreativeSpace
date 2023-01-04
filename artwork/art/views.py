@@ -38,8 +38,8 @@ def login(request):
            request.session['email'] = email
            request.session['pass'] = password
            return redirect('/artwork/')
-         else:
-           return render(request, 'source/login.html', {'data':'<script>alert("Incorrect Username and Password Try again!");</script>'})
+      else:
+        return render(request, 'source/login.html', {'data':'<script>alert("Incorrect Username and Password Try again!");</script>'})
     return render(request, 'source/login.html')
 
 def settings(request):
