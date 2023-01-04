@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <title>Settings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Blaka&family=Creepster&family=Darker+Grotesque:wght@300;400&family=Eater&family=Josefin+Slab:ital,wght@0,100;0,200;1,100&family=Podkova&family=Press+Start+2P&family=Rajdhani:wght@300&family=Reggae+One&family=Staatliches&family=Syne+Mono&family=VT323&display=swap"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/auth.css' %}"/>
+  </head>
+  <body>
+    {{data|safe}}
+    <!--Change Password-->
+    <div class="align">
+      <div class="form">
+        <a href="/artwork/">Home</a></br>
+        <h1>Change Pass</h1>
+        <form action="" method="post" onsubmit="return change_password();">
+          {% csrf_token %}
+            <input type="email" class="email" name="email" placeholder="Email"></br></br>
+            <input type="password" class="pass" name="pass" placeholder="Current Password"></br></br>
+            <input type="password" class="change-pass" name="change-password" placeholder="New Password"></br></br>
+            <input type="submit" value="Change password">
+        </form>
+      </div>
+    </div>
+    <!--Delete Account-->
+    <div class="align">
+        <div class="form">
+          <h1>Delete Account</h1>
+          <form action="" method="post" onsubmit="return delete_account();">
+            {% csrf_token %}
+              <input type="email" name="delete-email" placeholder="Email"></br></br>
+              <input type="password" name="delete-password" placeholder="Password"></br></br>
+              <input type="submit" value="Delete account">
+          </form>
+        </div>
+      </div>
+      <script src="{% static 'js/auth.js' %}"></script>
+  </body>
+</html>
