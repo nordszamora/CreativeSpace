@@ -55,14 +55,32 @@
 #allen {
   display: none;
 }
+@media (max-width: 1024px) {
+  .img {
+    width: 76%;
+  }
+}
 @media (max-width: 780px) {
   .img {
     width: 68%;
   }
 }
+@media (max-width: 540px) {
+  .img {
+    width: 30%;
+  }
+}
 @media (max-width: 480px) {
   .img {
     width: 36%;
+  }
+}
+@media (max-width: 393px) {
+  .img {
+    width: 45%;
+  }
+  .click > .button {
+    padding: 10px 10px 10px 10px;
   }
 }
 @media (max-width: 375px) {
